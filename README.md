@@ -3,10 +3,17 @@ Aplikasi Mie Yummy dibuat menggunakan 2 role (admin dan customer). Saat membuka 
 
 
 Login : Admin masuk menggunakan akun yang telah tersedia untuk memulai mengelola menu
+
 Logout : Admin keluar dari akun 
+
 Add Menu : Admin dapat menambahkan menu baru 
+
 update menu: Admin dapat mengedit informasi atau detail menu yang sudah ada 
+
 Delete Menu: Admin dapat menghapus menu dari daftar menu yang sudah ada
+
 Page Menu : Pengguna dapat melihat daftar lengkap menu yang telah tersedia
+
 Choose Menu : Pengguna dapat memilih menu yang ingin dipesan
+
 Recap Menu : Fitur yang menampilkan pesanan pengguna yang telah dipilih 
