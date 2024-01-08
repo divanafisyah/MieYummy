@@ -16,5 +16,5 @@ Aplikasi Mie Yummy dibuat menggunakan 2 role (admin dan customer). Saat membuka 
 - Recap Menu : Fitur yang menampilkan pesanan pengguna yang telah dipilih 
 
 **4. Detail Pembagian Tugas :**
-a. Diva - Main menu, menu custumer (choose menu)
-b. Mei - Login admin, menu admin (create menu, update menu, delete menu)
+- Diva - Main menu, menu custumer (choose menu)
+- Mei - Login admin, menu admin (create menu, update menu, delete menu)
