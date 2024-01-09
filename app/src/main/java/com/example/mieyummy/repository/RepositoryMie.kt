@@ -1,6 +1,6 @@
 package com.example.mieyummy.repository
 
-import com.example.admin.data.MieYummy
+import com.example.mieyummy.data.MieYummy
 import kotlinx.coroutines.flow.Flow
 
 interface RepositoryMie {

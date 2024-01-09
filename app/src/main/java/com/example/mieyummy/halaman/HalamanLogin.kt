@@ -32,7 +32,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.mieyummy.R
 import com.example.mieyummy.navigasi.DestinasiNavigasi
-import com.example.mieyummy.ui.theme.AdminTheme
 import com.google.firebase.auth.FirebaseAuth
 
 object DestinasiLogin: DestinasiNavigasi {
@@ -99,10 +98,3 @@ fun LoginScreen(onLogin:()-> Unit){
     }
 }
 
-@Preview()
-@Composable
-fun LoginPreview() {
-    AdminTheme {
-        LoginScreen(onLogin = {})
-    }
-}

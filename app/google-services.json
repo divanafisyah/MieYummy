@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "305992277047",
+    "firebase_url": "https://finalproject-ada0f-default-rtdb.firebaseio.com",
+    "project_id": "finalproject-ada0f",
+    "storage_bucket": "finalproject-ada0f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:305992277047:android:8c10620a8c341b68f4b3b2",
+        "android_client_info": {
+          "package_name": "com.example.admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "305992277047-jsnan5ub720vh9ko0a4ca2dpjiqgnf76.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqjP-JNcSvmlD7J2MNC0-a1aSiZqfMBpM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "305992277047-jsnan5ub720vh9ko0a4ca2dpjiqgnf76.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:305992277047:android:103b2cf4be9bfd4ef4b3b2",
+        "android_client_info": {
+          "package_name": "com.example.mieyummy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "305992277047-jsnan5ub720vh9ko0a4ca2dpjiqgnf76.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqjP-JNcSvmlD7J2MNC0-a1aSiZqfMBpM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "305992277047-jsnan5ub720vh9ko0a4ca2dpjiqgnf76.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

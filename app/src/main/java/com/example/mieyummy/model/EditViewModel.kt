@@ -6,11 +6,6 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.admin.model.DetailMieYummy
-import com.example.admin.model.UIStateMieYummy
-import com.example.admin.model.toDetailMieYummy
-import com.example.admin.model.toMieYummy
-import com.example.admin.model.toUiStateMieYummy
 import com.example.mieyummy.halaman.EditDestination
 import com.example.mieyummy.repository.RepositoryMie
 import kotlinx.coroutines.flow.SharingStarted
@@ -74,5 +69,5 @@ class EditViewModel (
 
 data class ItemDeleteUiState(
     val outOfStock: Boolean = true,
-    val detailMieYummy: DetailMieYummy = DetailMieYummy()
+    val detailMieYummy: DetailMieYummy= DetailMieYummy()
 )
