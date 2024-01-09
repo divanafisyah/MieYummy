@@ -31,5 +31,9 @@
     <string name="confrim">Konfirmasi</string>
     <string name="next">Lanjut</string>
     <string name="cancel">Batal</string>
+    <string name="quantity">Jumlah</string>
+    <string name="subtotal_price">Subtotal : Rp %s</string>
+    <string name="total_price">Total %s</string>
+
 
 </resources>

@@ -77,7 +77,6 @@ fun HostNavigasi(
                 }
                 )
         }
-
         composable(DestinasiCreate.route) {
             CreateMenuScreen(navigateBack = { navController.popBackStack() })
         }
@@ -93,6 +92,7 @@ fun HostNavigasi(
                 onNavigateUp = { navController.navigateUp() }
             )
         }
+
     }
 }
 

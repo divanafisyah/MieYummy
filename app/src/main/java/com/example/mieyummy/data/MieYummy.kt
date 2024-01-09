@@ -11,4 +11,5 @@ data class MieYummy(
     val nama: String,
     val deskripsi: String,
     val harga: String,
+    val jumlah: Int = 0,
 )
