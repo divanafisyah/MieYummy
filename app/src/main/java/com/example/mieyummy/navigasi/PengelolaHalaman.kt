@@ -1,4 +1,4 @@
-package com.example.admin.navigasi
+package com.example.mieyummy.navigasi
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -18,16 +18,15 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.example.admin.R
-import com.example.admin.halaman.CreateMenuScreen
-import com.example.admin.halaman.DestinasiCreate
-import com.example.admin.halaman.DestinasiLogin
-
-import com.example.admin.halaman.DestinasiMenu
-import com.example.admin.halaman.EditDestination
-import com.example.admin.halaman.EditMenuScreen
-import com.example.admin.halaman.LoginScreen
-import com.example.admin.halaman.MenuScreen
+import com.example.mieyummy.R
+import com.example.mieyummy.halaman.CreateMenuScreen
+import com.example.mieyummy.halaman.DestinasiCreate
+import com.example.mieyummy.halaman.DestinasiLogin
+import com.example.mieyummy.halaman.DestinasiMenu
+import com.example.mieyummy.halaman.EditDestination
+import com.example.mieyummy.halaman.EditMenuScreen
+import com.example.mieyummy.halaman.LoginScreen
+import com.example.mieyummy.halaman.MenuScreen
 
 
 @Composable

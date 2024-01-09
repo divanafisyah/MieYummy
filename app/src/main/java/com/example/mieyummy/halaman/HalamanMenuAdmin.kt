@@ -1,4 +1,4 @@
-package com.example.admin.halaman
+package com.example.mieyummy.halaman
 
 
 import androidx.compose.foundation.clickable
@@ -38,12 +38,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.admin.R
-import com.example.admin.data.MieYummy
-import com.example.admin.model.MenuViewModel
-import com.example.admin.model.PenyediaViewModel
-import com.example.admin.navigasi.DestinasiNavigasi
-import com.example.admin.navigasi.MieTopAppBar
+import com.example.mieyummy.R
+import com.example.mieyummy.data.MieYummy
+import com.example.mieyummy.model.MenuViewModel
+import com.example.mieyummy.model.PenyediaViewModel
+import com.example.mieyummy.navigasi.DestinasiNavigasi
+import com.example.mieyummy.navigasi.MieTopAppBar
 
 
 object DestinasiMenu: DestinasiNavigasi {

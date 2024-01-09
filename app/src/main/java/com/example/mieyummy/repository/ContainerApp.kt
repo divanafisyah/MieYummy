@@ -1,7 +1,7 @@
-package com.example.admin.repository
+package com.example.mieyummy.repository
 
 import android.content.Context
-import com.example.admin.data.DatabaseMieYummy
+import com.example.mieyummy.data.DatabaseMieYummy
 
 
 interface ContainerApp{

@@ -1,8 +1,8 @@
-package com.example.admin.model
+package com.example.mieyummy.model
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.admin.repository.RepositoryMie
+import com.example.mieyummy.repository.RepositoryMie
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.filterNotNull
@@ -19,6 +19,6 @@ class MenuViewModel (private val repositoryMie: RepositoryMie): ViewModel(){
         initialValue = MenuUiState())
 
     data class MenuUiState(
-        val listMie: List<com.example.admin.data.MieYummy> = listOf()
+        val listMie: List<com.example.mieyummy.data.MieYummy> = listOf()
     )
 }

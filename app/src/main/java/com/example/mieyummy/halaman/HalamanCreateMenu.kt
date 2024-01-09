@@ -1,4 +1,4 @@
-package com.example.admin.halaman
+package com.example.mieyummy.halaman
 
 
 import androidx.compose.foundation.layout.Arrangement
@@ -21,13 +21,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
-import com.example.admin.R
-import com.example.admin.model.CreateViewModel
-import com.example.admin.model.DetailMieYummy
-import com.example.admin.model.PenyediaViewModel
-import com.example.admin.model.UIStateMieYummy
-import com.example.admin.navigasi.DestinasiNavigasi
-import com.example.admin.navigasi.MieTopAppBar
+import com.example.mieyummy.R
+import com.example.mieyummy.model.CreateViewModel
+import com.example.mieyummy.model.DetailMieYummy
+import com.example.mieyummy.model.PenyediaViewModel
+import com.example.mieyummy.model.UIStateMieYummy
+import com.example.mieyummy.navigasi.DestinasiNavigasi
+import com.example.mieyummy.navigasi.MieTopAppBar
 import kotlinx.coroutines.launch
 
 object DestinasiCreate: DestinasiNavigasi {

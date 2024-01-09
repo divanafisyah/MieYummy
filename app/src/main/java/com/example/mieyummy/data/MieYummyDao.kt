@@ -1,4 +1,4 @@
-package com.example.admin.data
+package com.example.mieyummy.data
 
 import androidx.room.Dao
 import androidx.room.Delete

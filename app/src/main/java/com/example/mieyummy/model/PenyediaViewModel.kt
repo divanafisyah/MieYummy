@@ -1,11 +1,11 @@
-package com.example.admin.model
+package com.example.mieyummy.model
 
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.createSavedStateHandle
 import androidx.lifecycle.viewmodel.CreationExtras
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.admin.AplikasiMieYummy
+import com.example.mieyummy.AplikasiMieYummy
 
 object PenyediaViewModel {
     val factory = viewModelFactory {

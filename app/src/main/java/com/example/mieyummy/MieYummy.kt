@@ -1,8 +1,8 @@
 package com.example.mieyummy
 
 import android.app.Application
-import com.example.admin.repository.ContainerApp
-import com.example.admin.repository.ContainerDataApp
+import com.example.mieyummy.repository.ContainerApp
+import com.example.mieyummy.repository.ContainerDataApp
 
 
 class AplikasiMieYummy : Application() {

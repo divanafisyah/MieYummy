@@ -1,4 +1,4 @@
-package com.example.admin.halaman
+package com.example.mieyummy.halaman
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -23,13 +23,12 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.admin.R
-import com.example.admin.model.EditViewModel
-import com.example.admin.model.ItemDeleteUiState
-import com.example.admin.model.PenyediaViewModel
-import com.example.admin.model.toMieYummy
-import com.example.admin.navigasi.DestinasiNavigasi
-import com.example.admin.navigasi.MieTopAppBar
+import com.example.mieyummy.R
+import com.example.mieyummy.model.EditViewModel
+import com.example.mieyummy.model.ItemDeleteUiState
+import com.example.mieyummy.model.PenyediaViewModel
+import com.example.mieyummy.navigasi.DestinasiNavigasi
+import com.example.mieyummy.navigasi.MieTopAppBar
 import kotlinx.coroutines.launch
 
 object EditDestination : DestinasiNavigasi {

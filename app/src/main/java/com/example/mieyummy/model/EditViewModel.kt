@@ -1,4 +1,4 @@
-package com.example.admin.model
+package com.example.mieyummy.model
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -6,8 +6,8 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.admin.halaman.EditDestination
-import com.example.admin.repository.RepositoryMie
+import com.example.mieyummy.halaman.EditDestination
+import com.example.mieyummy.repository.RepositoryMie
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.filterNotNull

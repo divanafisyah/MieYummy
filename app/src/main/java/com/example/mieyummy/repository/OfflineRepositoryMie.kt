@@ -1,8 +1,9 @@
-package com.example.admin.repository
+package com.example.mieyummy.repository
 
-import com.example.admin.data.MieYummy
-import com.example.admin.data.MieYummyDao
 
+
+import com.example.mieyummy.data.MieYummy
+import com.example.mieyummy.data.MieYummyDao
 import kotlinx.coroutines.flow.Flow
 
 class OfflineRepositoryMie(private val mieYummyDao: MieYummyDao): RepositoryMie {
