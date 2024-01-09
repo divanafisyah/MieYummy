@@ -1,4 +1,4 @@
-package com.example.admin.halaman
+package com.example.mieyummy.halaman
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
@@ -30,9 +30,9 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.admin.R
-import com.example.admin.navigasi.DestinasiNavigasi
-import com.example.admin.ui.theme.AdminTheme
+import com.example.mieyummy.R
+import com.example.mieyummy.navigasi.DestinasiNavigasi
+import com.example.mieyummy.ui.theme.AdminTheme
 import com.google.firebase.auth.FirebaseAuth
 
 object DestinasiLogin: DestinasiNavigasi {

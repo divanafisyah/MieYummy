@@ -1,4 +1,4 @@
-package com.example.admin.repository
+package com.example.mieyummy.repository
 
 import com.example.admin.data.MieYummy
 import kotlinx.coroutines.flow.Flow

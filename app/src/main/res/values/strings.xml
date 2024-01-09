@@ -28,5 +28,8 @@
     <string name="delete">Hapus</string>
     <string name="lg">Login Menggunakan Akun Yang sudah Terdaftar</string>
     <string name="lg1">LOGIN ADMIN</string>
+    <string name="confrim">Konfirmasi</string>
+    <string name="next">Lanjut</string>
+    <string name="cancel">Batal</string>
 
 </resources>

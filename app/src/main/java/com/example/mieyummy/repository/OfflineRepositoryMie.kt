@@ -1,4 +1,4 @@
-package com.example.admin.repository
+package com.example.mieyummy.repository
 
 import com.example.admin.data.MieYummy
 import com.example.admin.data.MieYummyDao

@@ -1,6 +1,4 @@
-package com.example.admin.navigasi
+package com.example.mieyummy.Navigasi
 
 interface DestinasiNavigasi {
-    val route: String
-    val titleRes: Int
 }

@@ -1,11 +1,11 @@
-package com.example.admin.model
+package com.example.mieyummy.model
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import com.example.admin.data.MieYummy
-import com.example.admin.repository.RepositoryMie
+import com.example.mieyummy.data.MieYummy
+import com.example.mieyummy.repository.RepositoryMie
 
 class CreateViewModel (private val repositoryMie: RepositoryMie): ViewModel(){
     var uiStateMieYummy by mutableStateOf(UIStateMieYummy())
