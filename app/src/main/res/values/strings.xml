@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">MieYummy</string>
+    <string name="mnu">Menu</string>
+    <string name="transaksi">Transaction</string>
+    <string name="mieymm">MIE YUMMY</string>
+    <string name="welcom">Welcom Admin</string>
+    <string name="deskripsi_no_item">Tidak ada Data Menu. Tap + untuk menambah Data Menu Baru</string>
+    <string name="entry_menu">Tambah Menu</string>
+    <string name="back">"Back</string>
+    <string name="jenis">"Jenis</string>
+    <string name="nama">"Nama</string>
+    <string name="desk">"Deskripsi</string>
+    <string name="price">"Harga</string>
+    <string name="jenis1">"Jenis</string>
+    <string name="nama1">"Nama</string>
+    <string name="desk1">"Deskripsi</string>
+    <string name="price1">"Harga</string>
+    <string name="usrname">Username</string>
+    <string name="pswd">Password</string>
+    <string name="lgin">LOGIN</string>
+    <string name="lgout">LOGOUT</string>
+    <string name="required_field">"* required fields</string>
+    <string name="btn_submit">"Submit</string>
+    <string name="edit_menu">"Edit Menu</string>
+    <string name="attention">"Perhatian</string>
+    <string name="yes">Ya</string>
+    <string name="no">No</string>
+    <string name="delete">Hapus</string>
+    <string name="lg">Login Menggunakan Akun Yang sudah Terdaftar</string>
+    <string name="lg1">LOGIN ADMIN</string>
+
 </resources>
