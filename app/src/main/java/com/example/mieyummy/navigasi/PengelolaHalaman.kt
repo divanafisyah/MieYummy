@@ -17,7 +17,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.example.mieyummy.DestinasiSplash
 import com.example.mieyummy.R
 import com.example.mieyummy.SplashScreen
 import com.example.mieyummy.halaman.CreateMenuScreen
@@ -69,10 +68,10 @@ fun HostNavigasi(
         modifier: Modifier = Modifier) {
     NavHost(
         navController = navController,
-        startDestination = DestinasiSplash.route,
+        startDestination = "SplashScreen",
         modifier = Modifier
     ) {
-        composable(DestinasiSplash.route){
+        composable("SplashScreen"){
             SplashScreen(navController = navController)
         }
         composable(DestinasiLanding.route){
