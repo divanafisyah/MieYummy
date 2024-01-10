@@ -21,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import com.example.mieyummy.R
 import com.example.mieyummy.model.CreateViewModel
 import com.example.mieyummy.model.DetailMieYummy
@@ -28,6 +29,7 @@ import com.example.mieyummy.model.PenyediaViewModel
 import com.example.mieyummy.model.UIStateMieYummy
 import com.example.mieyummy.navigasi.DestinasiNavigasi
 import com.example.mieyummy.navigasi.MieTopAppBar
+import com.example.mieyummy.ui.theme.MieYummyTheme
 import kotlinx.coroutines.launch
 
 object DestinasiCreate: DestinasiNavigasi {
@@ -60,7 +62,7 @@ fun CreateMenuScreen(
             onSaveClick = {
                 coroutineScope.launch {
                     viewModel.saveMieYummy()
-                    navigateBack
+                    navigateBack()
                 }
             },
             modifier = Modifier
@@ -158,3 +160,4 @@ fun FormInputMenu(
 
     }
 }
+
