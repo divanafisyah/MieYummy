@@ -5,8 +5,10 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -40,14 +42,19 @@ object DestinasiLanding: DestinasiNavigasi {
         modifier: Modifier = Modifier,
 
         ) {
-        Text(
-            text = "WELCOME TO MIE YUMMY!",
-            fontSize = 25.sp,
-            fontWeight = FontWeight.Bold
-        )
         Column(
-            modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.SpaceBetween) {
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center,
+            modifier = Modifier.fillMaxSize()
+        )
+        {
+            Spacer(modifier = Modifier.height(100.dp)
+            )
+            Text(
+                text = "WELCOME TO MIE YUMMY!",
+                fontSize = 30.sp,
+                fontWeight = FontWeight.Bold
+            )
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -56,41 +63,63 @@ object DestinasiLanding: DestinasiNavigasi {
                 horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
                 verticalAlignment = Alignment.Bottom
             ) {
-                Button(
-                    onClick = onLoginClick,
-                    modifier = Modifier.weight(1f) // Allow button to expand horizontally
+                Column(
+                    modifier = Modifier,
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center,
                 ) {
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.Center,
-                        verticalAlignment = Alignment.CenterVertically
+                    Button(
+                        onClick = onLoginClick,
+                        modifier = Modifier
+                            .width(350.dp)
+                            .height(75.dp)
                     ) {
-                        Image(
-                            painter = painterResource(R.drawable.user),
-                            contentDescription = "Admin",
-                            modifier = Modifier.size(24.dp)
-                        )
-                        Spacer(modifier = Modifier.width(8.dp))
-                        Text(stringResource(R.string.btn_login))
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.Center,
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Image(
+                                painter = painterResource(R.drawable.user),
+                                contentDescription = "Admin",
+                                modifier = Modifier.size(30.dp)
+                            )
+                            Spacer(modifier = Modifier.width(8.dp))
+                            Text(
+                                text = "ADMIN",
+                                fontSize = 30.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
                     }
-                }
-                Button(
-                    onClick = onMenuCustClick,
-                    modifier = Modifier.weight(1f) // Allow button to expand horizontally
-                ) {
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.Center,
-                        verticalAlignment = Alignment.CenterVertically
+                    Spacer(modifier = Modifier.height(100.dp)
+                    )
+                    Button(
+                        onClick = onLoginClick,
+                        modifier = Modifier
+                            .width(350.dp)
+                            .height(75.dp)
                     ) {
-                        Image(
-                            painter = painterResource(R.drawable.menu_white),
-                            contentDescription = "Menu",
-                            modifier = Modifier.size(24.dp)
-                        )
-                        Spacer(modifier = Modifier.width(8.dp))
-                        Text(stringResource(R.string.btn_menu))
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.Center,
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Image(
+                                painter = painterResource(R.drawable.menu_white),
+                                contentDescription = "Menu",
+                                modifier = Modifier.size(30.dp)
+                            )
+                            Spacer(modifier = Modifier.width(8.dp))
+                            Text(
+                                text = "PESAN DISINI",
+                                fontSize = 30.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
                     }
+                    Spacer(modifier = Modifier.height(250.dp)
+                    )
                 }
             }
         }
