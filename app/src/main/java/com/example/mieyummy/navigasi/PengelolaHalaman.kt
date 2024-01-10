@@ -20,8 +20,11 @@ import androidx.navigation.navArgument
 import com.example.mieyummy.R
 import com.example.mieyummy.halaman.CreateMenuScreen
 import com.example.mieyummy.halaman.DestinasiCreate
+import com.example.mieyummy.halaman.DestinasiLanding
+import com.example.mieyummy.halaman.DestinasiLanding.LandingScreen
 import com.example.mieyummy.halaman.DestinasiLogin
 import com.example.mieyummy.halaman.DestinasiMenu
+import com.example.mieyummy.halaman.DestinasiMenuCust
 import com.example.mieyummy.halaman.EditDestination
 import com.example.mieyummy.halaman.EditMenuScreen
 import com.example.mieyummy.halaman.LoginScreen
@@ -66,6 +69,14 @@ fun HostNavigasi(
         startDestination = DestinasiLogin.route,
         modifier = Modifier
     ) {
+        composable(DestinasiLanding.route){
+            LandingScreen (
+                onLandingClick = {navController.navigate(DestinasiLogin.route)},
+                onDetailClick = {
+                    {navController.navigate(DestinasiMenuCust.route)}
+                }
+            )
+        }
         composable(DestinasiLogin.route){
             LoginScreen (onLogin = {navController.navigate(DestinasiMenu.route)})
 
@@ -77,7 +88,6 @@ fun HostNavigasi(
                 }
                 )
         }
-
         composable(DestinasiCreate.route) {
             CreateMenuScreen(navigateBack = { navController.popBackStack() })
         }
@@ -93,6 +103,7 @@ fun HostNavigasi(
                 onNavigateUp = { navController.navigateUp() }
             )
         }
+
     }
 }
 

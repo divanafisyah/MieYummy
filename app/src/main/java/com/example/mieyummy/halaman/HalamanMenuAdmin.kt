@@ -36,6 +36,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.mieyummy.R
@@ -44,6 +45,7 @@ import com.example.mieyummy.model.MenuViewModel
 import com.example.mieyummy.model.PenyediaViewModel
 import com.example.mieyummy.navigasi.DestinasiNavigasi
 import com.example.mieyummy.navigasi.MieTopAppBar
+import com.example.mieyummy.ui.theme.MieYummyTheme
 
 
 object DestinasiMenu: DestinasiNavigasi {
@@ -81,7 +83,6 @@ fun MenuScreen(
             BodyMenu(itemMieYummy = uiStateMieYummy.listMie,
                 modifier = Modifier.padding(innerPadding).fillMaxWidth(),
                 onMenuClick = onDetailClick)
-
     }
 }
 
@@ -129,7 +130,6 @@ fun ListMenu(
                 )
         }
     }
-
 }
 
 @Composable
