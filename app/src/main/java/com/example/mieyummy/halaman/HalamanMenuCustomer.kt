@@ -25,10 +25,12 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.mieyummy.R
 import com.example.mieyummy.navigasi.DestinasiNavigasi
+import com.example.mieyummy.ui.theme.MieYummyTheme
 
 object DestinasiMenuCust: DestinasiNavigasi {
     override val route= "MENU"
@@ -43,8 +45,7 @@ fun HalamanMenuCustomer(
     onNextButtonClicked: () -> Unit,
     onCancelButtonClicked: () -> Unit,
     modifier: Modifier = Modifier
-)
-{
+){
     var quantity by remember { mutableIntStateOf(0) }
 
     Column (modifier = modifier,
@@ -107,17 +108,28 @@ fun HalamanMenuCustomer(
             ){
                 OutlinedButton(
                     modifier = Modifier.weight(1f),
-                    onClick = onCancelButtonClicked) {
+                    onClick = onCancelButtonClicked)
+                {
                     Text(stringResource(R.string.cancel))
                 }
                 Button(
                     modifier = Modifier.weight(1f),
-                    //the button is enabled when the user makes a selection
                     onClick = onNextButtonClicked
                 ){
                     Text(stringResource(R.string.next))
                 }
             }
         }
+    }
+}
+@Preview(showBackground = true)
+@Composable
+fun PreviewHalamanMenuCustomer() {
+    MieYummyTheme {
+        HalamanMenuCustomer(
+            onMenuCust = {},
+            onDetailClick = {},
+            onNextButtonClicked = {},
+            onCancelButtonClicked = {})
     }
 }
