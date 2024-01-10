@@ -7,10 +7,15 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedCard
@@ -22,83 +27,94 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.mieyummy.R
+import com.example.mieyummy.halaman.DestinasiLanding.LandingScreen
 import com.example.mieyummy.model.MenuViewModel
 import com.example.mieyummy.model.PenyediaViewModel
+import com.example.mieyummy.navigasi.DestinasiNavigasi
 import com.example.mieyummy.ui.theme.MieYummyTheme
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun LandingScreen(
-    navigateToLogin: () -> Unit,
-    navigateToMenu: () -> Unit,
-    onLandingClick: () -> Unit,
-    modifier: Modifier =Modifier,
+object DestinasiLanding: DestinasiNavigasi {
+    override val route = "LANDING"
+    override val titleRes = R.string.app_name
 
-) {
-    Column(modifier = Modifier, verticalArrangement = Arrangement.SpaceBetween) {
-        OutlinedCard(
-            colors = CardDefaults.cardColors(
-                containerColor = MaterialTheme.colorScheme.surface,
-            ),
+    @OptIn(ExperimentalMaterial3Api::class)
+    @Composable
+    fun LandingScreen(
+        onMenuCust:()-> Unit,
+        onLogin:() -> Unit,
+        onLandingClick: () -> Unit,
+        modifier: Modifier = Modifier,
 
-            modifier = Modifier
-                .fillMaxWidth(0.95f)
-                .padding(vertical = 30.dp)
-                .align(Alignment.CenterHorizontally)
         ) {
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier.align(Alignment.CenterHorizontally)
-            ) {
-                Row(
+        Text(text = "WELCOME TO MIE YUMMY!", fontSize = 25.sp, fontWeight = FontWeight.Bold)
+
+        Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceBetween) {
+                OutlinedCard(
+                    colors = CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.surface,
+                    ),
                     modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(dimensionResource(R.dimen.padding_medium))
-                        .weight(
-                            1f,
-                            fill = false
-                        ),
-                    horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
-                    verticalAlignment = Alignment.Bottom
+                        .fillMaxSize() // Fill the entire available space
+                        .padding(vertical = 30.dp)
                 ) {
-                    Button(
-                        onClick = navigateToLogin,
-                        modifier = Modifier.weight(1f)
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        modifier = Modifier.fillMaxSize() // Fill the entire card space
                     ) {
-                        Text(stringResource(R.string.btn_login))
-                    }
-                }
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(dimensionResource(R.dimen.padding_medium))
-                        .weight(
-                            1f,
-                            fill = false
-                        ),
-                    horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
-                    verticalAlignment = Alignment.Bottom
-                ) {
-                    Button(
-                        onClick = navigateToMenu,
-                        modifier = Modifier.weight(1f)
-                    ) {
-                        Text(stringResource(R.string.btn_menu))
+                        ElevatedCard(
+                            elevation = CardDefaults.cardElevation(defaultElevation = 6.dp),
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(dimensionResource(R.dimen.padding_medium))
+                                    .weight(1f), // Allow buttons to expand evenly
+                                horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
+                                verticalAlignment = Alignment.Bottom
+                            ) {
+                                Button(
+                                    onClick = onLogin,
+                                    modifier = Modifier.weight(1f) // Allow button to expand horizontally
+                                ) {
+                                    Text(stringResource(R.string.btn_login))
+                                }
+                                Button(
+                                    onClick = onMenuCust,
+                                    modifier = Modifier.weight(1f) // Allow button to expand horizontally
+                                ) {
+                                    Row(
+                                        modifier = Modifier.fillMaxSize(),
+                                        horizontalArrangement = Arrangement.Center,
+                                        verticalAlignment = Alignment.CenterVertically
+                                    ) {
+                                        Image(
+                                            painter = painterResource(R.drawable.menu),
+                                            contentDescription = "Menu",
+                                            modifier = Modifier.size(24.dp)
+                                        )
+                                        Spacer(modifier = Modifier.width(8.dp))
+                                        Text(stringResource(R.string.btn_menu))
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
         }
     }
-}
+
 @Preview(showBackground = true)
 @Composable
 fun PreviewHalamanLanding(){
     MieYummyTheme{
-        LandingScreen(navigateToLogin = {}, navigateToMenu = {}, onLandingClick = {})
+        LandingScreen(onMenuCust = {}, onLogin = {}, onLandingClick = {})
     }
 }

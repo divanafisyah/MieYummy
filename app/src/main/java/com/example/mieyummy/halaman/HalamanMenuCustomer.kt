@@ -38,6 +38,8 @@ object DestinasiMenuCust: DestinasiNavigasi {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HalamanMenuCustomer(
+    onMenuCust:()-> Unit,
+    onDetailClick:(Int)->Unit={},
     onNextButtonClicked: () -> Unit,
     onCancelButtonClicked: () -> Unit,
     modifier: Modifier = Modifier
@@ -54,7 +56,7 @@ fun HalamanMenuCustomer(
                 modifier = Modifier.size(40.dp),
             ) {
                 Icon(
-                    imageVector = ImageVector.vectorResource(id = R.drawable.baseline_horizontal_rule_24),
+                    imageVector = ImageVector.vectorResource(id = R.drawable.minus),
                     contentDescription = "Decrement"
                 )
             }
