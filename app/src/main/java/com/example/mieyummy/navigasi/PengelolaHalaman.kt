@@ -66,16 +66,13 @@ fun HostNavigasi(
         modifier: Modifier = Modifier) {
     NavHost(
         navController = navController,
-        startDestination = DestinasiLogin.route,
+        startDestination = DestinasiLanding.route,
         modifier = Modifier
     ) {
         composable(DestinasiLanding.route){
-            LandingScreen (
-                onLandingClick = {navController.navigate(DestinasiLogin.route)},
-                onDetailClick = {
-                    {navController.navigate(DestinasiMenuCust.route)}
-                }
-            )
+            LandingScreen (onLoginClick = {navController.navigate(DestinasiLogin.route)},
+                onMenuCustClick = {navController.navigate(DestinasiMenuCust.route)}
+                )
         }
         composable(DestinasiLogin.route){
             LoginScreen (onLogin = {navController.navigate(DestinasiMenu.route)})

@@ -46,9 +46,8 @@ object DestinasiLanding: DestinasiNavigasi {
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
     fun LandingScreen(
-        onMenuCust:()-> Unit,
-        onLogin:() -> Unit,
-        onLandingClick: () -> Unit,
+        onMenuCustClick:()-> Unit,
+        onLoginClick:() -> Unit,
         modifier: Modifier = Modifier,
 
         ) {
@@ -80,13 +79,13 @@ object DestinasiLanding: DestinasiNavigasi {
                                 verticalAlignment = Alignment.Bottom
                             ) {
                                 Button(
-                                    onClick = onLogin,
+                                    onClick = onLoginClick,
                                     modifier = Modifier.weight(1f) // Allow button to expand horizontally
                                 ) {
                                     Text(stringResource(R.string.btn_login))
                                 }
                                 Button(
-                                    onClick = onMenuCust,
+                                    onClick = onMenuCustClick,
                                     modifier = Modifier.weight(1f) // Allow button to expand horizontally
                                 ) {
                                     Row(
@@ -115,6 +114,6 @@ object DestinasiLanding: DestinasiNavigasi {
 @Composable
 fun PreviewHalamanLanding(){
     MieYummyTheme{
-        LandingScreen(onMenuCust = {}, onLogin = {}, onLandingClick = {})
+        LandingScreen(onMenuCustClick = {}, onLoginClick = {})
     }
 }
