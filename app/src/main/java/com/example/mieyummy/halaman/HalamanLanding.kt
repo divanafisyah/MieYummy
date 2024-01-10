@@ -54,7 +54,44 @@ fun LandingScreen(
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier.align(Alignment.CenterHorizontally)
-            ) {}
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(dimensionResource(R.dimen.padding_medium))
+                        .weight(
+                            1f,
+                            fill = false
+                        ),
+                    horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
+                    verticalAlignment = Alignment.Bottom
+                ) {
+                    Button(
+                        onClick = navigateToLogin,
+                        modifier = Modifier.weight(1f)
+                    ) {
+                        Text(stringResource(R.string.btn_login))
+                    }
+                }
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(dimensionResource(R.dimen.padding_medium))
+                        .weight(
+                            1f,
+                            fill = false
+                        ),
+                    horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
+                    verticalAlignment = Alignment.Bottom
+                ) {
+                    Button(
+                        onClick = navigateToMenu,
+                        modifier = Modifier.weight(1f)
+                    ) {
+                        Text(stringResource(R.string.btn_menu))
+                    }
+                }
+            }
         }
     }
 }
