@@ -29,75 +29,83 @@ object DestinasiRecap: DestinasiNavigasi {
     override val titleRes= R.string.app_name
 }
 @Composable
-fun HalamanRecap(
-    mieYummy: MieYummy,
-    onCancelButtonClicked: () -> Unit,
-    modifier: Modifier = Modifier
-){
-    val items = listOf(
-        Pair(stringResource(R.string.quantity), mieYummy.jumlah),
-        Pair(stringResource(R.string.jenis), mieYummy.jenis)
-    )
+fun TampilRecap(
+    modifier: Modifier = Modifier,
+//    mieYummy: MieYummy,
+//    onCancelButtonClicked: () -> Unit,
+//    modifier: Modifier = Modifier
+//){
+//    val items = listOf(
+//        Pair(stringResource(R.string.quantity), mieYummy.jumlah),
+//        Pair(stringResource(R.string.jenis), mieYummy.jenis)
+//    )
+//
+//    val contact= listOf(
+//        Pair(stringResource(id = R.string.nama), mieYummy.nama),
+//        Pair(stringResource(id = R.string.desk), mieYummy.deskripsi),
+//        Pair(stringResource(id = R.string.price), mieYummy.harga)
+//    )
+//    Column (
+//        modifier = modifier,
+//        verticalArrangement = Arrangement.SpaceBetween
+//    ){
+//        Column (
+//            modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
+//            verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small))
+//        ){
+//            contact.forEach { item ->
+//                Column {
+//                    Text(item.first, fontWeight = FontWeight.Bold)
+//                    Text(text = item.second)
+//                }
+//                Divider(
+//                    thickness = dimensionResource(R.dimen.padding_medium)
+//                )
+//            }
+//            items.forEach { item ->
+//                Column {
+//                    Text(item.first.uppercase())
+//                    Text(text = item.second.toString(), fontWeight = FontWeight.Bold)
+//                }
+//                Divider(
+//                    thickness = dimensionResource(R.dimen.padding_medium)
+//                )
+//            }
+//            Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_small)))
+//            FormatHarga(
+//                subtotal = mieYummy.harga,
+//                modifier = Modifier.align(Alignment.End)
+//            )
+//        }
+//        Row (
+//            modifier = Modifier
+//                .weight(1f, false)
+//                .padding(dimensionResource(R.dimen.padding_medium))
+//        ){
+//            Column (
+//                verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small))
+//            ){
+//                Button(
+//                    modifier = Modifier.fillMaxWidth(),
+//                    onClick = { }
+//                ) {
+//                    Text(stringResource(R.string.back))
+//                }
+//                OutlinedButton(
+//                    modifier = Modifier.fillMaxWidth(),
+//                    onClick = onCancelButtonClicked
+//                ) {
+//                    Text(stringResource(R.string.cancel))
+//                }
+//            }
+//        }
+//    }
+//}
 
-    val contact= listOf(
-        Pair(stringResource(id = R.string.nama), mieYummy.nama),
-        Pair(stringResource(id = R.string.desk), mieYummy.deskripsi),
-        Pair(stringResource(id = R.string.price), mieYummy.harga)
-    )
-    Column (
-        modifier = modifier,
-        verticalArrangement = Arrangement.SpaceBetween
-    ){
-        Column (
-            modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
-            verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small))
-        ){
-            contact.forEach { item ->
-                Column {
-                    Text(item.first, fontWeight = FontWeight.Bold)
-                    Text(text = item.second)
-                }
-                Divider(
-                    thickness = dimensionResource(R.dimen.padding_medium)
-                )
-            }
-
-            items.forEach { item ->
-                Column {
-                    Text(item.first.uppercase())
-                    Text(text = item.second.toString(), fontWeight = FontWeight.Bold)
-                }
-                Divider(
-                    thickness = dimensionResource(R.dimen.padding_medium)
-                )
-            }
-            Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_small)))
-            FormatHarga(
-                subtotal = mieYummy.harga,
-                modifier = Modifier.align(Alignment.End)
-            )
-        }
-        Row (
-            modifier = Modifier
-                .weight(1f, false)
-                .padding(dimensionResource(R.dimen.padding_medium))
-        ){
-            Column (
-                verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small))
-            ){
-                Button(
-                    modifier = Modifier.fillMaxWidth(),
-                    onClick = { }
-                ) {
-                    Text(stringResource(R.string.back))
-                }
-                OutlinedButton(
-                    modifier = Modifier.fillMaxWidth(),
-                    onClick = onCancelButtonClicked
-                ) {
-                    Text(stringResource(R.string.cancel))
-                }
-            }
-        }
+@Preview(showBackground = true)
+@Composable
+fun PreviewHalamanRecap() {
+    MieYummyTheme {
+        TampilRecap()
     }
 }
