@@ -80,6 +80,7 @@ fun MenuScreen(
         }
     ) {innerPadding ->
         val uiStateMieYummy by viewModel.menuuistate.collectAsState()
+
             BodyMenu(itemMieYummy = uiStateMieYummy.listMie,
                 modifier = Modifier.padding(innerPadding).fillMaxWidth(),
                 onMenuClick = onDetailClick)
