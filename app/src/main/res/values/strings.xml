@@ -34,6 +34,8 @@
     <string name="quantity">Jumlah</string>
     <string name="subtotal_price">Subtotal : Rp %s</string>
     <string name="total_price">Total %s</string>
+    <string name="btn_login">ADMIN</string>
+    <string name="btn_menu">PESAN DISINI</string>
 
 
 </resources>
