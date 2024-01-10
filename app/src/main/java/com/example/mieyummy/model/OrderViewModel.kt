@@ -1,14 +1,61 @@
-//package com.example.mieyummy.model
-//
-//import androidx.lifecycle.ViewModel
-//import com.example.mieyummy.data.MieYummy
-//import kotlinx.coroutines.flow.MutableStateFlow
-//import kotlinx.coroutines.flow.StateFlow
-//import kotlinx.coroutines.flow.asStateFlow
-//import kotlinx.coroutines.flow.update
-//import java.text.NumberFormat
-//
-//private const val HARGA_PER_CUP = 3000
+package com.example.mieyummy.model
+
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.mieyummy.data.MieYummy
+import com.example.mieyummy.repository.RepositoryMie
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.filterNotNull
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.stateIn
+
+class OrderViewModel(private val repositoryMie: RepositoryMie) : ViewModel() {
+
+    companion object {
+        private const val TIMEOUT_MILIES = 5_000L
+    }
+
+    // State untuk daftar menu
+    val orderistate: StateFlow<OrderViewModel.OrderUiState> =
+        repositoryMie.getAllMieStream()
+            .filterNotNull()
+            .map { MenuViewModel.MenuUiState(listMie = it.toList()) }
+            .stateIn(
+                scope = viewModelScope,
+                started = SharingStarted.WhileSubscribed(TIMEOUT_MILIES),
+                initialValue = OrderViewModel.orderUirState()
+            )
+
+    // State untuk pesanan
+    val listMie = MutableStateFlow(emptyList<listMie>())
+    val orderList: StateFlow<List<listMie> get() = listMie.asStateFlow()
+
+    // Fungsi untuk menambah pesanan
+    fun addToOrder(mie: Mie) {
+        listMie.value = listMie.value + mie
+    }
+
+    // Fungsi untuk menghapus pesanan
+    fun removeFromOrder(mie: Mie) {
+        listMie.value = listMie.value - mie
+    }
+
+    // Fungsi untuk menghitung total pesanan
+    fun calculateTotalOrder(): Double {
+        return listMie.value.sumByDouble { it.price }
+    }
+
+    data class OrderUiState(
+        val listMie: List<com.example.mieyummy.data.MieYummy> = listOf()
+    )
+}
+
+
+
 //class OrderViewModel : ViewModel() {
 //    private val _stateUI = MutableStateFlow(MieYummy())
 //    val stateUI: StateFlow<MieYummy> = _stateUI.asStateFlow()
