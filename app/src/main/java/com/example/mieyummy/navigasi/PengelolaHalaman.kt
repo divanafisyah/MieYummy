@@ -87,11 +87,14 @@ fun HostNavigasi(
             MenuScreen(navigateToItemEntry = { navController.navigate(DestinasiCreate.route) },
                 onDetailClick = {
                     navController.navigate("${EditDestination.route}/$it")
-                }
+                },
+                onLandingClick = {navController.navigate(DestinasiLanding.route)}
+
                 )
         }
         composable(DestinasiCreate.route) {
-            CreateMenuScreen(navigateBack = { navController.popBackStack() })
+            CreateMenuScreen(navigateBack = { navController.popBackStack()},
+                )
         }
         composable(
             EditDestination.routeWithArgs,
