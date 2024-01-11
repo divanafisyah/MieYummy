@@ -90,7 +90,7 @@ fun HostNavigasi(
             
         }
         composable(DestinasiRecap.route){
-            RecapScreen(navigateBack = { /*TODO*/ })
+            RecapScreen(onCustMenuClick = { navController.navigate(DestinasiMenuCust.route)})
         }
         composable(DestinasiMenu.route) {
             MenuScreen(navigateToItemEntry = { navController.navigate(DestinasiCreate.route) },
