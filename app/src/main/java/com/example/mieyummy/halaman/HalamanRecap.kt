@@ -107,6 +107,7 @@ fun RecapScreen(
                     text = "Kembali",
                     fontSize = 20.sp,
                     fontWeight = FontWeight.Bold
+
                 )
             }
         }
