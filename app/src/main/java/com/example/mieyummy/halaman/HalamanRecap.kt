@@ -1,48 +1,48 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
+
 package com.example.mieyummy.halaman
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.mieyummy.R
-import com.example.mieyummy.model.CreateViewModel
-import com.example.mieyummy.model.PenyediaViewModel
 import com.example.mieyummy.navigasi.DestinasiNavigasi
 import com.example.mieyummy.ui.theme.MieYummyTheme
 
-object DestinasiRecap: DestinasiNavigasi {
-    override val route= "RECAP"
-    override val titleRes= R.string.app_name
+object DestinasiRecap : DestinasiNavigasi {
+    override val route = "RECAP"
+    override val titleRes = R.string.app_name
 }
+
 @Composable
 fun RecapScreen(
-    onCustMenuClick:()->Unit={},
-){
+    onCustMenuClick: () -> Unit = {},
+) {
     val id: Int = 0
-    val jenis: String =""
-    val nama: String =""
-    val deskripsi: String =""
-    val harga: String =""
+    val jenis: String = ""
+    val nama: String = ""
+    val deskripsi: String = ""
+    val harga: String = ""
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -55,14 +55,15 @@ fun RecapScreen(
             fontSize = 30.sp,
             fontWeight = FontWeight.Bold
         )
-        Spacer(modifier = Modifier.height(250.dp)
+        Spacer(
+            modifier = Modifier.height(250.dp)
         )
-        ElevatedCard (
+        ElevatedCard(
             elevation = CardDefaults.cardElevation(defaultElevation = 6.dp),
             modifier = Modifier
                 .width(300.dp)
                 .height(200.dp)
-        ){
+        ) {
             Text(
                 text = "ID :" + id,
                 fontSize = 16.sp,
@@ -89,13 +90,19 @@ fun RecapScreen(
                 modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp)
             )
         }
-        Spacer(modifier = Modifier
-            .height(250.dp))
+        Spacer(
+            modifier = Modifier
+                .height(250.dp)
+        )
         Button(
             onClick = onCustMenuClick,
             modifier = Modifier
                 .width(350.dp)
                 .height(50.dp)
+                .shadow(
+                    elevation = 10.dp,
+                    spotColor = androidx.compose.ui.graphics.Color.Black,
+                    shape = RoundedCornerShape(5.dp))
         ) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -112,8 +119,9 @@ fun RecapScreen(
         }
     }
 }
+
 @Preview(showBackground = true)
 @Composable
 fun PreviewHalamanRecap() {
-    MieYummyTheme {RecapScreen(onCustMenuClick = {})    }
+    MieYummyTheme { RecapScreen(onCustMenuClick = {}) }
 }
