@@ -38,7 +38,6 @@ object DestinasiRecap: DestinasiNavigasi {
 fun RecapScreen(
     onCustMenuClick:()->Unit={},
 ){
-    val id: Int = 0
     val jenis: String =""
     val nama: String =""
     val deskripsi: String =""
@@ -55,7 +54,7 @@ fun RecapScreen(
             fontSize = 30.sp,
             fontWeight = FontWeight.Bold
         )
-        Spacer(modifier = Modifier.height(250.dp)
+        Spacer(modifier = Modifier.height(150.dp)
         )
         ElevatedCard (
             elevation = CardDefaults.cardElevation(defaultElevation = 6.dp),
@@ -63,11 +62,6 @@ fun RecapScreen(
                 .width(300.dp)
                 .height(200.dp)
         ){
-            Text(
-                text = "ID :" + id,
-                fontSize = 16.sp,
-                modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp)
-            )
             Text(
                 text = "Jenis :" + jenis,
                 fontSize = 16.sp,
@@ -90,7 +84,7 @@ fun RecapScreen(
             )
         }
         Spacer(modifier = Modifier
-            .height(250.dp))
+            .height(150.dp))
         Button(
             onClick = onCustMenuClick,
             modifier = Modifier
@@ -98,7 +92,7 @@ fun RecapScreen(
                 .height(50.dp)
         ) {
             Row(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier.fillMaxSize(),
                 horizontalArrangement = Arrangement.Center,
                 verticalAlignment = Alignment.CenterVertically
             ) {
