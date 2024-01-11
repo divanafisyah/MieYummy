@@ -61,6 +61,7 @@ object DestinasiMenuCust: DestinasiNavigasi {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MenuCustomerScreen(
+    navigateToRecap: ()->Unit,
     modifier: Modifier = Modifier,
     viewModel: MenuViewModel = viewModel(factory = PenyediaViewModel.factory)
 
@@ -76,7 +77,7 @@ fun MenuCustomerScreen(
         },
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { },
+                onClick = navigateToRecap,
                 shape = MaterialTheme.shapes.medium,
                 modifier = Modifier
                     .padding(dimensionResource(id = R.dimen.padding_large))
@@ -186,11 +187,11 @@ fun CustMenu(
         }
     }
 
-@Preview(showBackground = true)
-@Composable
-fun PreviewMenuCustomerScreen(){
-    MieYummyTheme{
-        MenuCustomerScreen()
-    }
-}
+//@Preview(showBackground = true)
+//@Composable
+//fun PreviewMenuCustomerScreen(){
+//    MieYummyTheme{
+//        MenuCustomerScreen()
+//    }
+//}
 
