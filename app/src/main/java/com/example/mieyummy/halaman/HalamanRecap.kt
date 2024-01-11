@@ -36,7 +36,7 @@ object DestinasiRecap: DestinasiNavigasi {
 }
 @Composable
 fun RecapScreen(
-    navigateBack: ()-> Unit,
+    onCustMenuClick:()->Unit={},
 ){
     val id: Int = 0
     val jenis: String =""
@@ -92,7 +92,7 @@ fun RecapScreen(
         Spacer(modifier = Modifier
             .height(250.dp))
         Button(
-            onClick = navigateBack,
+            onClick = onCustMenuClick,
             modifier = Modifier
                 .width(350.dp)
                 .height(50.dp)
@@ -115,5 +115,5 @@ fun RecapScreen(
 @Preview(showBackground = true)
 @Composable
 fun PreviewHalamanRecap() {
-    MieYummyTheme {RecapScreen(navigateBack = {})    }
+    MieYummyTheme {RecapScreen(onCustMenuClick = {})    }
 }
