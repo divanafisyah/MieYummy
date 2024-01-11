@@ -6,23 +6,21 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.Button
-
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
-
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.FloatingActionButtonElevation
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -53,19 +51,19 @@ import com.example.mieyummy.navigasi.DestinasiNavigasi
 import com.example.mieyummy.navigasi.MieTopAppBar
 import com.example.mieyummy.ui.theme.MieYummyTheme
 
-object DestinasiMenuCust: DestinasiNavigasi {
-    override val route= "MENU"
-    override val titleRes= R.string.psn
+object DestinasiMenuCust : DestinasiNavigasi {
+    override val route = "MENU"
+    override val titleRes = R.string.psn
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MenuCustomerScreen(
-    navigateToRecap: ()->Unit,
+    navigateToRecap: () -> Unit,
     modifier: Modifier = Modifier,
-    viewModel: MenuViewModel = viewModel(factory = PenyediaViewModel.factory)
+    viewModel: MenuViewModel = viewModel(factory = PenyediaViewModel.factory),
 
-){
+    ) {
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
     Scaffold(
         modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
@@ -73,7 +71,8 @@ fun MenuCustomerScreen(
             MieTopAppBar(
                 title = stringResource(DestinasiMenuCust.titleRes),
                 canNavigateBack = false,
-                scrollBehavior= scrollBehavior)
+                scrollBehavior = scrollBehavior
+            )
         },
         floatingActionButton = {
             FloatingActionButton(
@@ -81,12 +80,14 @@ fun MenuCustomerScreen(
                 shape = MaterialTheme.shapes.medium,
                 modifier = Modifier
                     .padding(dimensionResource(id = R.dimen.padding_large))
-                    .fillMaxWidth(),
+                    .width(350.dp)
+                    .height(50.dp)
+
             ) {
-            Text(text = "Pesan", fontSize = 20.sp, fontWeight = FontWeight.Bold)
-        }}
-        ){
-        innerPadding->
+                Text(text = "Pesan", fontSize = 20.sp, fontWeight = FontWeight.Bold)
+            }
+        }
+    ) { innerPadding ->
         val uiStateMieYummy by viewModel.menuuistate.collectAsState()
 
         BodyCustMenu(
@@ -98,32 +99,34 @@ fun MenuCustomerScreen(
     }
 
 }
+
 @Composable
 fun BodyCustMenu(
     itemCustMenu: List<MieYummy>,
     modifier: Modifier = Modifier,
-    onCustMenuClick:(Int)->Unit={},
-){
+    onCustMenuClick: (Int) -> Unit = {},
+) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = modifier)
+        modifier = modifier
+    )
     {
         ListCustMenu(itemCustMenu = itemCustMenu,
             modifier = Modifier.padding(horizontal = dimensionResource(id = R.dimen.padding_small)),
-            onListCustClick = {onCustMenuClick(it.id)})
+            onListCustClick = { onCustMenuClick(it.id) })
     }
 }
+
 @Composable
 fun ListCustMenu(
     itemCustMenu: List<MieYummy>,
     modifier: Modifier = Modifier,
-    onListCustClick: (MieYummy)-> Unit
+    onListCustClick: (MieYummy) -> Unit,
 
 
-){
-    LazyColumn(modifier = Modifier){
-        items(items = itemCustMenu, key ={it.id}){
-            cust->
+    ) {
+    LazyColumn(modifier = Modifier) {
+        items(items = itemCustMenu, key = { it.id }) { cust ->
 
             CustMenu(mieYummy = cust, modifier = modifier
                 .padding(dimensionResource(id = R.dimen.padding_small))
@@ -131,11 +134,12 @@ fun ListCustMenu(
         }
     }
 }
+
 @Composable
 fun CustMenu(
     mieYummy: MieYummy,
-    modifier: Modifier
-){
+    modifier: Modifier,
+) {
     var number by remember {
         mutableIntStateOf(0)
     }
@@ -167,31 +171,36 @@ fun CustMenu(
                 style = MaterialTheme.typography.titleMedium,
             )
 
-                Row (
-                    modifier= Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceAround
-                ){
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceAround
+            ) {
 
 
-                    IconButton(onClick = {number --}){
-                        Icon(imageVector= ImageVector.vectorResource(id = R.drawable.minus), contentDescription ="" )}
+                IconButton(onClick = { number-- }) {
+                    Icon(
+                        imageVector = ImageVector.vectorResource(id = R.drawable.minus),
+                        contentDescription = ""
+                    )
+                }
 
-                    Text(text = "$number", fontSize = 20.sp, fontWeight = FontWeight.Bold)
+                Text(text = "$number", fontSize = 20.sp, fontWeight = FontWeight.Bold)
 
-                    IconButton(onClick = {number ++}){
-                        Icon(imageVector = Icons.Default.Add, contentDescription ="" )}
-
+                IconButton(onClick = { number++ }) {
+                    Icon(imageVector = Icons.Default.Add, contentDescription = "")
                 }
 
             }
+
         }
     }
+}
 
-//@Preview(showBackground = true)
-//@Composable
-//fun PreviewMenuCustomerScreen(){
-//    MieYummyTheme{
-//        MenuCustomerScreen()
-//    }
-//}
+@Preview(showBackground = true)
+@Composable
+fun PreviewMenuCustomerScreen(){
+    MieYummyTheme{
+        MenuCustomerScreen(navigateToRecap = {})
+    }
+}
 
