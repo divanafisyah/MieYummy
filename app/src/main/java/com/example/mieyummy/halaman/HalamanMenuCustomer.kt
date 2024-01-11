@@ -10,15 +10,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.FloatingActionButton
-import androidx.compose.material3.FloatingActionButtonElevation
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -73,27 +69,11 @@ fun MenuCustomerScreen(
                 title = stringResource(DestinasiMenuCust.titleRes),
                 canNavigateBack = false,
                 scrollBehavior= scrollBehavior)
-        },
-        floatingActionButton = {
-            FloatingActionButton(
-                onClick = { },
-                shape = MaterialTheme.shapes.medium,
-                modifier = Modifier
-                    .padding(dimensionResource(id = R.dimen.padding_large))
-                    .fillMaxWidth(),
-            ) {
-            Text(text = "Pesan", fontSize = 20.sp, fontWeight = FontWeight.Bold)
-        }}
-        ){
+        },){
         innerPadding->
         val uiStateMieYummy by viewModel.menuuistate.collectAsState()
 
-        BodyCustMenu(
-            itemCustMenu = uiStateMieYummy.listMie,
-            modifier = Modifier
-                .padding(innerPadding)
-                .fillMaxWidth(),
-        )
+        BodyCustMenu(itemCustMenu = uiStateMieYummy.listMie, modifier = Modifier.padding(innerPadding).fillMaxWidth(),)
     }
 
 }
@@ -117,8 +97,6 @@ fun ListCustMenu(
     itemCustMenu: List<MieYummy>,
     modifier: Modifier = Modifier,
     onListCustClick: (MieYummy)-> Unit
-
-
 ){
     LazyColumn(modifier = Modifier){
         items(items = itemCustMenu, key ={it.id}){
@@ -137,9 +115,6 @@ fun CustMenu(
     mieYummy: MieYummy,
     modifier: Modifier
 ){
-    var number by remember {
-        mutableIntStateOf(0)
-    }
     Card(
         modifier = modifier,
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
@@ -167,24 +142,91 @@ fun CustMenu(
                 text = mieYummy.harga,
                 style = MaterialTheme.typography.titleMedium,
             )
-
-                Row (
-                    modifier= Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceAround
-                ){
-
-
-                    IconButton(onClick = {number --}){
-                        Icon(imageVector= ImageVector.vectorResource(id = R.drawable.minus), contentDescription ="" )}
-
-                    Text(text = "$number", fontSize = 20.sp, fontWeight = FontWeight.Bold)
-
-                    IconButton(onClick = {number ++}){
-                        Icon(imageVector = Icons.Default.Add, contentDescription ="" )}
-
-                }
-
-            }
         }
     }
-
+}
+//@OptIn(ExperimentalMaterial3Api::class)
+//@Composable
+//fun HalamanMenuCustomer(
+//    onMenuCust:()-> Unit,
+//    onDetailClick:(Int)->Unit={},
+//    onNextButtonClicked: () -> Unit,
+//    onCancelButtonClicked: () -> Unit,
+//    modifier: Modifier = Modifier
+//){
+//    var quantity by remember { mutableIntStateOf(0) }
+//
+//    Column (modifier = modifier,
+//        verticalArrangement = Arrangement.SpaceBetween){
+//        Column (modifier =
+//        Modifier.padding(dimensionResource(R.dimen.padding_medium))){
+//            IconButton(
+//                onClick = { if (quantity > 1) quantity-- },
+//                modifier = Modifier.size(40.dp),
+//            ) {
+//                Icon(
+//                    imageVector = ImageVector.vectorResource(id = R.drawable.minus),
+//                    contentDescription = "Decrement"
+//                )
+//            }
+//
+//            Text(
+//                text = quantity.toString(),
+//                fontWeight = FontWeight.Bold,
+//                fontSize = 16.sp
+//            )
+//
+//            IconButton(
+//                onClick = { quantity++ },
+//                modifier = Modifier.size(40.dp),
+//            ) {
+//                Icon(
+//                    imageVector = ImageVector.vectorResource(id = R.drawable.add),
+//                    contentDescription = "Increment"
+//                )
+//            }
+//            Divider(
+//                thickness = dimensionResource(R.dimen.padding_medium),
+//                modifier = Modifier.padding(bottom =
+//                dimensionResource(R.dimen.padding_medium)
+//                )
+//            )
+//            Row (modifier = Modifier
+//                .fillMaxWidth()
+//                .padding(dimensionResource(R.dimen.padding_medium))
+//                .weight(1f, false),
+//                horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
+//            ){
+//
+//            }
+//            Divider(
+//                thickness = dimensionResource(R.dimen.padding_medium),
+//                modifier = Modifier.padding(bottom =
+//                dimensionResource(R.dimen.padding_medium)
+//                )
+//            )
+//            Row(
+//                modifier = Modifier
+//                    .fillMaxWidth()
+//                    .padding(dimensionResource(R.dimen.padding_medium))
+//                    .weight(1f, false),
+//                horizontalArrangement =
+//                Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
+//                verticalAlignment = Alignment.Bottom
+//            ){
+//                OutlinedButton(
+//                    modifier = Modifier.weight(1f),
+//                    onClick = onCancelButtonClicked)
+//                {
+//                    Text(stringResource(R.string.cancel))
+//                }
+//                Button(
+//                    modifier = Modifier.weight(1f),
+//                    onClick = onNextButtonClicked
+//                ){
+//                    Text(stringResource(R.string.next))
+//                }
+//            }
+//        }
+//    }
+//}
