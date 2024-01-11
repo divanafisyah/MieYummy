@@ -31,7 +31,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -72,7 +74,7 @@ fun MenuCustomerScreen(
         topBar = {
             MieTopAppBar(
                 title = stringResource(DestinasiMenuCust.titleRes),
-                canNavigateBack = false,
+                canNavigateBack = true,
                 scrollBehavior= scrollBehavior)
         },
         floatingActionButton = {
@@ -81,7 +83,7 @@ fun MenuCustomerScreen(
                 shape = MaterialTheme.shapes.medium,
                 modifier = Modifier
                     .padding(dimensionResource(id = R.dimen.padding_large))
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
             ) {
             Text(text = "Pesan", fontSize = 20.sp, fontWeight = FontWeight.Bold)
         }}
@@ -138,6 +140,9 @@ fun CustMenu(
 ){
     var number by remember {
         mutableIntStateOf(0)
+    }
+    var menuYgDipilih by rememberSaveable {
+        mutableStateOf("")
     }
     Card(
         modifier = modifier,
