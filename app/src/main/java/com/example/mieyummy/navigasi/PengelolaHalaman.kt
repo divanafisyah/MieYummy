@@ -29,6 +29,7 @@ import com.example.mieyummy.halaman.DestinasiMenuCust
 import com.example.mieyummy.halaman.EditDestination
 import com.example.mieyummy.halaman.EditMenuScreen
 import com.example.mieyummy.halaman.LoginScreen
+import com.example.mieyummy.halaman.MenuCustomerScreen
 import com.example.mieyummy.halaman.MenuScreen
 
 
@@ -76,12 +77,15 @@ fun HostNavigasi(
         }
         composable(DestinasiLanding.route){
             LandingScreen (onLoginClick = {navController.navigate(DestinasiLogin.route)},
-                onMenuCustClick = {navController.navigate(DestinasiMenuCust.route)}
+                onMenuCustClick = {navController.navigate(DestinasiMenuCust.route)},
                 )
         }
         composable(DestinasiLogin.route){
             LoginScreen (onLogin = {navController.navigate(DestinasiMenu.route)})
 
+        }
+        composable(DestinasiMenuCust.route){
+            MenuCustomerScreen()
         }
         composable(DestinasiMenu.route) {
             MenuScreen(navigateToItemEntry = { navController.navigate(DestinasiCreate.route) },

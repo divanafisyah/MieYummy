@@ -95,7 +95,7 @@ object DestinasiLanding: DestinasiNavigasi {
                     Spacer(modifier = Modifier.height(100.dp)
                     )
                     Button(
-                        onClick = onLoginClick,
+                        onClick = onMenuCustClick,
                         modifier = Modifier
                             .width(350.dp)
                             .height(75.dp)
