@@ -7,9 +7,9 @@ import androidx.room.PrimaryKey
 data class MieYummy(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
-    val jenis: String,
-    val nama: String,
-    val deskripsi: String,
-    val harga: String,
+    val jenis: String ="",
+    val nama: String ="",
+    val deskripsi: String="",
+    val harga: String="",
     val jumlah: Int = 0,
 )

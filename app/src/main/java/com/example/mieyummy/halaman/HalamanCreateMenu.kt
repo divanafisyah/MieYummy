@@ -40,6 +40,7 @@ object DestinasiCreate: DestinasiNavigasi {
 @Composable
 fun CreateMenuScreen(
     navigateBack: ()-> Unit,
+    onNavigateUp:()-> Unit,
     modifier: Modifier = Modifier,
     viewModel: CreateViewModel = androidx.lifecycle.viewmodel.compose.viewModel(factory = PenyediaViewModel.factory)
 ){
@@ -52,6 +53,7 @@ fun CreateMenuScreen(
             MieTopAppBar(
                 title = stringResource(DestinasiMenu.titleRes),
                 canNavigateBack = true,
+                navigateUp = onNavigateUp,
                 scrollBehavior = scrollBehavior
             )
         }
